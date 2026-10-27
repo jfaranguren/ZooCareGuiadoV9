@@ -785,7 +785,8 @@ public class Zoo {
         for (Activity myActivity : myActivities) {
             LocalDate executionDate = myActivity.getExecutionDate();
 
-            if (myActivity.getHabitat().getId().equals(habitatId) && executionDate.getMonth().equals(date.getMonth())
+            if (myActivity.getHabitat().getId().equals(habitatId) && executionDate != null
+                    && executionDate.getMonth().equals(date.getMonth())
                     && executionDate.getYear() == date.getYear()) {
                 if (myActivity instanceof FeedingActivity) {
                     counter += 1;
